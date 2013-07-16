@@ -109,11 +109,14 @@ def raise_all_pieri(elements,k):
         out.extend(pieri(elem,k))
     return out
 
-def BV3(v=None):
+def BVm(m,v=None):
     if v == None:
-        v = [[3]]
-    print "Analyzing V_%d"%(1+sum(v[0])/3)
-    intermediate = sorted(raise_all_pieri(v,2))
+        v = [[m]]
+    n=(1+sum(v[0])/m)
+    if n > 4:
+        return
+    print "Analyzing V_%d"%n
+    intermediate = sorted(raise_all_pieri(v,m-1))
     su = [sorted(x) for x in search_up(intermediate)]
     trivial = [sum(su[0][0])]
     def uniquep(x):
@@ -132,6 +135,6 @@ def BV3(v=None):
             print ""
     if len(valids) == 1:
         print "1 valid detected. Continuing.\n"
-        BV3(valids[0])
+        BVm(m,valids[0])
 
-BV3()
+BVm(2)
