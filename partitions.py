@@ -62,17 +62,29 @@ def search_up(down_elements, forbidden_choices= None):
             out.append([partition2]+result)
     return out
 
-current = [[2]]
-n = 1
-for loop in range(5):
-    intermediate = []
-    for partition in current:
-        intermediate.extend(branch_up(partition))
-    # Use the fact that there is a copy of the trivial in uppers, hence 
-    # there is a copy of the trivial in intermediate
-    n += 2
-    intermediate.remove([n])
-    uppers = search_up(intermediate)
-    assert(len(uppers) == 1)
-    current = [[n+1]] + uppers[0]
-    print current
+def BV():
+    current = [[2]]
+    n = 1
+    for loop in range(3):
+        intermediate = raise_all(current)
+        # Use the fact that there is a copy of the trivial in uppers, hence 
+        # there is a copy of the trivial in intermediate
+        n += 2
+        intermediate.remove([n])
+        uppers = search_up(intermediate)
+        assert(len(uppers) == 1)
+        current = [[n+1]] + uppers[0]
+        print current
+
+def raise_all(down_elements):
+    # Helper function to induce a list one level up.
+    out = []
+    for partition in down_elements:
+        out.extend(branch_up(partition))
+    return out
+
+# Now to check some things by hand.
+s8 = [[8],[7,1],[6,2],[6,2],[5,3],[5,2,1],[4,4],[4,3,1],[4,2,2]]
+print search_up(s8)
+
+
