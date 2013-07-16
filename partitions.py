@@ -83,8 +83,25 @@ def raise_all(down_elements):
         out.extend(branch_up(partition))
     return out
 
-# Now to check some things by hand.
-s8 = [[8],[7,1],[6,2],[6,2],[5,3],[5,2,1],[4,4],[4,3,1],[4,2,2]]
-print search_up(s8)
+def pieri(partition,k,limit=None):
+    out = []
+    if limit == None:
+        limit = k + partition[0]
+    if partition == []:
+        if k <= limit:
+            if k > 0:
+                return [[k]]
+            if k == 0:
+                return [[]]
+        return []
+    if k < 0:
+        return []
+    first = partition[0]
+    for i in range(min(k,limit-first)+1):
+        rest = partition[1:]
+        for x in pieri(rest,k-i,first+i):
+            out.append([first+i]+x)
+    return out
 
-
+print pieri([6],2)
+print pieri([4,2],2)
