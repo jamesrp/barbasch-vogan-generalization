@@ -99,9 +99,23 @@ def pieri(partition,k,limit=None):
     first = partition[0]
     for i in range(min(k,limit-first)+1):
         rest = partition[1:]
-        for x in pieri(rest,k-i,first+i):
+        for x in pieri(rest,k-i,first):
             out.append([first+i]+x)
     return out
 
-print pieri([6],2)
-print pieri([4,2],2)
+def raise_all_pieri(elements,k):
+    out = []
+    for elem in elements:
+        out.extend(pieri(elem,k))
+    return out
+
+
+v = [[5, 2, 2], [4, 4, 1], [6, 3], [7, 2], [9]]
+for x in v:
+    print x
+    print pieri(x,2)
+intermediate = raise_all_pieri(v,2)
+print intermediate
+su = search_up(intermediate)
+for x in su:
+    print x
