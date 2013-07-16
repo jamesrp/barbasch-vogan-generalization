@@ -109,13 +109,29 @@ def raise_all_pieri(elements,k):
         out.extend(pieri(elem,k))
     return out
 
+def BV3(v=None):
+    if v == None:
+        v = [[3]]
+    print "Analyzing V_%d"%(1+sum(v[0])/3)
+    intermediate = sorted(raise_all_pieri(v,2))
+    su = [sorted(x) for x in search_up(intermediate)]
+    trivial = [sum(su[0][0])]
+    def uniquep(x):
+        n = len(x)
+        for i in range(n-1):
+            if x[i] == x[i+1]:
+                return False
+        return True
+    valids = []
+    for x in su:
+        if trivial in x:
+            print x
+            valids.append(x)
+            if uniquep(x):
+                print "Multiplicity-Free"
+            print ""
+    if len(valids) == 1:
+        print "1 valid detected. Continuing.\n"
+        BV3(valids[0])
 
-v = [[5, 2, 2], [4, 4, 1], [6, 3], [7, 2], [9]]
-for x in v:
-    print x
-    print pieri(x,2)
-intermediate = raise_all_pieri(v,2)
-print intermediate
-su = search_up(intermediate)
-for x in su:
-    print x
+BV3()
