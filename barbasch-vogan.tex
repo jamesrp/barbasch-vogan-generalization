@@ -56,5 +56,12 @@ $\Res_{S_{nm-1}}^{S_{nm}}(W_n) = \Ind_{S_{(n-1)m} \times S_{m-1}}^{S_{nm-1}}(W_{
 $\Res_{S_{nm-1}}^{S_{nm}}(Z_n) = \Ind_{S_{(n-1)m} }^{S_{nm-1}}(Z_{n-1})$. 
 The right-hand sides of these can be computed by applying Pieri's rule and the branching rule ($m-1$ times), respectively.
 \end{lemma}
-
+\begin{proof}
+The proof is a straightforward generalization of Lemmas 1.1 and 1.2.
+We intersect with $S_{nm-1}$. In the $Z_n$ case, this gives $S_{m-1} \wr Z_n$. 
+In the $W_n$ case, it gives $(S_{m-1} \wr S_n) \times S_{n-1}$.
+Therefore, in the $Z_n$ case, we use the inclusion $S_{n(m-1)} \subseteq S_{nm-1}$, while in the $W_n$ case, we use the inclusion $S_{n(m-1)} \times S_{n-1} 
+\subseteq S_{nm-1}$. These corresponding to applying Pieri's rule repeatedly
+with $k=1$, and applying it once with $k=n-1$, respectively.
+\end{proof}
 \end{document}
