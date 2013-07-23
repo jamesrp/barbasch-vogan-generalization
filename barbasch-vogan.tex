@@ -1,0 +1,60 @@
+\documentclass[12pt]{amsart}
+\usepackage{amssymb,amsmath}
+%\usepackage[left=1in,right=1in]{geometry}
+\usepackage{amsthm}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Ind}{\textup{Ind}}
+\newcommand{\Res}{\textup{Res}}
+\newcommand{\wreath}{\textup{wr}}
+
+
+
+\title{Barbasch-Vogan generalization}
+
+\begin{document}
+\maketitle
+\section{Original Barbasch-Vogan proof}
+Let $H_n \subset S_{2n}$ be the hyperoctahedral group. The aim of this paper is to reproduce the result of Barbasch and Vogan describing the representation $V_n := \Ind_{H_n}^{S_{2n}}(1)$.
+\begin{lemma}
+$S_{2n}/H_n \cong S_{2n-1}/(H_n \cap S_{2n-1}) = S_{2n-1}/H_{n-1}$ as sets of cosets with a $S_{2n-1}$ action. 
+\end{lemma}
+\begin{proof}
+The second equality follows from $H_n \cap S_{2n-1} = H_{n-1}$. For the first, define a map $\phi: S_{2n} / H_n \to S_{2n-1}/H_{n-1}$ by $\phi(gH_n) = (gH_n) \cap S_{2n-1}$. When defining $\phi$, choosing the coset representative $g \in S_{2n-1}$ shows that $\phi$ is well-defined. It's straightforward to check that the $S_{2n-1}$ action commutes with $\phi$.
+\end{proof}
+
+\begin{lemma}
+$\Res_{S_{2n-1}}^{S_{2n}}(V_n) = \Ind_{S_{2n-2}}^{S_{2n-1}}(V_{n-1})$.
+\end{lemma}
+\begin{proof}
+By Lemma 1.1, $\Res_{S_{2n-1}}^{S_{2n}}(V_n) = S_{2n-1}/H_{n-1}$. But this is
+\newline $ \Ind_{H_{n-1}}^{S_{2n-1}} 1 = \Ind_{S_{2n-2}}^{S_{2n-1}}(V_{n-1})$.
+\end{proof}
+
+\begin{theorem}
+$V_n \cong \oplus S^\lambda$, summed over each $\lambda \vdash 2n$ with all parts even.
+\end{theorem}
+\begin{proof}
+This is true for $n=1$. We use induction. Assume $V_{n-1}$ has the described decomposition. We use Lemma 1.2. By the branching rule, $\Ind^{S_{2n-1}}(V_{n-1})$ contains each $\mu \vdash 2n-1$ with exactly one odd part. Suppose $V_n$ contains $\lambda$ with at least three rows and at least two odd parts. Then the restriction of $\lambda$ contains a $\mu$ with three odd parts; thus these $\lambda$ do not occur. To rule out $\lambda$ with two odd rows, note that $\lambda=(2n)$ occurs in $V_n$ by Frobenius reciprocity. Therefore $(2n-1,1)$ can't occur, as it would contribute a second copy of $(2n-1)$. An induction on $i$ shows that $(2n-i,i)$ occurs if and only if $i$ is even.
+\end{proof}
+
+\section{Generalizing to other groups}
+Our next goal is to treat the cases of $W_n = \Ind_{S_n \wreath S_m}^{S_{nm}}(1)$ and $Z_n = \Ind_{S_n \wreath C_m}^{S_{nm}}(1)$. In different ways, these each generalize the Barbasch-Vogan result. The strategy used above can be adapted to these cases.
+
+\begin{lemma}
+$\Res_{S_{nm-1}}^{S_{nm}}(W_n) = \Ind_{S_{(n-1)m} \times S_{m-1}}^{S_{nm-1}}(W_{n-1} \otimes 1)$.
+$\Res_{S_{nm-1}}^{S_{nm}}(Z_n) = \Ind_{S_{(n-1)m} }^{S_{nm-1}}(Z_{n-1})$. 
+The right-hand sides of these can be computed by applying Pieri's rule and the branching rule ($m-1$ times), respectively.
+\end{lemma}
+
+\end{document}
