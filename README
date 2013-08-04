@@ -1,0 +1,6 @@
+This is some code and notes supporting an attempt to generalize the following
+result (proved by Barbasch and Vogan in (?) 1982):
+
+The action of S_{2n} on the set of complete matchings on K_{2n} is isomorphic
+to the sum of S^\lambda over all partitions \lambda of 2n consisting entirely
+of even parts. Each such irreducible occurs with multiplicity one.
