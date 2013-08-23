@@ -1,3 +1,5 @@
+import cPickle, sys, collections
+
 def pp(partition):
     return str(partition)[1:-1].replace(', ','-')
 
@@ -144,4 +146,46 @@ def BVm(m,v=None):
         print "1 valid detected. Continuing.\n"
         BVm(m,valids[0])
 
-BVm(6)
+#retrieve cache, creating null if no file
+try:
+    f = open('data/sm')
+    cache = cPickle.load(f)
+    f.close()
+except IOError:
+    cache = {}
+print "(m,n) in cache:"
+keys = collections.defaultdict(list)
+for k in cache.keys():
+    keys[k[0]].append(k[1])
+for m in sorted(keys.keys()):
+    print "m={}, n = {}".format(m,sorted(keys[m]))
+
+def sm(m,n):
+    if (m,n) in cache:
+        return cache[(m,n)]
+    if n == 1:
+        cache[(m,n)] = [[m]]
+        return [[m]]
+    previous = sm(m,n-1)
+    intermediate = sorted(raise_all_pieri(previous,m-1))
+    trivial = [m*n]
+    possibles = uniques([sorted(x) for x in search_up(intermediate) if trivial in x])
+    if len(possibles) > 1:
+        raise NotImplementedError, 'The induction to {},{} was not uniquely determined.'.format(m,n)
+    cache[(m,n)] = possibles[0]
+    return possibles[0]
+
+# User interaction loop
+while True:
+    inp = raw_input("m,n>")
+    try:
+        m,n = [int(x) for x in inp.split(',')]
+        print sm(m,n)
+    except:
+        print "bye."
+        break
+
+# commit updated cache
+f = open('data/sm','w')
+cPickle.dump(cache,f)
+f.close()
