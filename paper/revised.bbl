@@ -12,6 +12,12 @@ Hamza Fawzi, James Saunderson, and Pablo~A Parrilo.
 \newblock Equivariant semidefinite lifts of regular polygons.
 \newblock {\em arXiv preprint arXiv:1409.4379}, 2014.
 
+\bibitem{kaibel2010symmetry}
+Volker Kaibel, Kanstantsin Pashkovich, and Dirk~Oliver Theis.
+\newblock Symmetry matters for the sizes of extended formulations.
+\newblock In {\em Integer programming and combinatorial optimization}, pages
+  135--148. Springer, 2010.
+
 \bibitem{lee2014lower}
 James~R Lee, Prasad Raghavendra, and David Steurer.
 \newblock Lower bounds on the size of semidefinite programming relaxations.
@@ -22,5 +28,21 @@ James~R Lee, Prasad Raghavendra, David Steurer, and Ning Tan.
 \newblock On the power of symmetric lp and sdp relaxations.
 \newblock In {\em IEEE 29th Conference on Computational Complexity, CCC 2014,
   Vancouver, BC, Canada}, pages 13--21, 2014.
+
+\bibitem{rothvoss2013matching}
+Thomas Rothvoss.
+\newblock The matching polytope has exponential extension complexity.
+\newblock {\em arXiv preprint arXiv:1311.2369}, 2013.
+
+\bibitem{vallentin2009symmetry}
+Frank Vallentin.
+\newblock Symmetry in semidefinite programs.
+\newblock {\em Linear Algebra and Its Applications}, 430(1):360--369, 2009.
+
+\bibitem{yannakakis1988expressing}
+Mihalis Yannakakis.
+\newblock Expressing combinatorial optimization problems by linear programs.
+\newblock In {\em Proceedings of the twentieth annual ACM symposium on Theory
+  of computing}, pages 223--228. ACM, 1988.
 
 \end{thebibliography}

@@ -22,6 +22,8 @@
 \newcommand{\Ind}{\textup{Ind}}
 \newcommand{\Res}{\textup{Res}}
 \newcommand{\wreath}{\textup{ wr }}
+\newcommand{\MATCH}{\textup{MATCH}}
+\newcommand{\CUT}{\textup{CUT}}
 \newcommand{\mult}{\textup{mult}}
 
 \title{The representation theory of generalized hyperoctahedral groups}
@@ -47,40 +49,30 @@ The algebraic results are a first step in deciding whether the matching polytope
 \section{Introduction} \label{BV:Introduction}
 \subsection{Lifts of polytopes}
 A lift of a polytope $P \subseteq \RR^n$ is an object $Q \subseteq \RR^m$ together with a linear map $L: \RR^m \to \RR^n$ such that $L(Q) = P$.
-Usually we choose a $Q$ over which we can efficiently optimize linear functions; this then gives a procedure for optimizing linear functions over $P$, which we care about for computational complexity reasons.
+Usually we choose a $Q$ over which we can efficiently optimize linear functions.
+This then gives a procedure for optimizing linear functions over $P$, which bounds the complexity of optimizing over $P$.
 Two important examples are LP (linear) lifts, in which $Q$ is again a polytope, and SDP (semidefinite) lifts, in which $Q$ is the feasible region of a semidefinite program.
-To efficiently optimize over $Q$, we require the LP or SDP to have a short description.
-Thus, it is an active area of research to find small lifts of polytopes, or to prove that no such small lifts exist.
+We often have that $P$ is invariant under a group $G$.
+In this case, we say the lift is {\em invariant} if $G$ preserves $Q$ and commutes with $L$.
+For a given polytope, we are interested in whether a small SDP or LP lift exists, and if so, whether it can be made invariant.
 
-Often, the polytope $P$ in question is invariant under a group action. In this case, we say a lift is {\em invariant} if the group action preserves $Q$ and commutes with $L$. 
-A central example is the matching polytope. 
-Since matching is in P, it is reasonable that there be a small (invariant, or not) lift of the matching polytope.
-However, Yannakakis (1991) proved that it has no small invariant LP lift.
-Kaibel-Pashkovich-Theis (2009) found examples of polytopes for which there is a small lift but no small symmetric lift.
-Rothvoss (2014) proved that the matching polytope has no LP lift whatsoever (even a non-symmetric one).
+A central example is the {\em matching polytope} $\MATCH_n$, given by the convex hull of characteristic vectors of perfect matchings in the complete graph $K_{2n}$.
+Since the maximum matching problem is in P, it is reasonable that there be a small lift of $\MATCH_n$.
+However, Yannakakis \cite{yannakakis1988expressing} proved that $\MATCH_n$ has no small invariant LP lift.
+Kaibel, Pashkovich, and Theis \cite{kaibel2010symmetry} found examples of slices of $\MATCH_n$ for which there is a small lift but no small invariant lift.
+Rothvoss \cite{rothvoss2013matching} showed that $\MATCH_n$ has no small LP lift.
 
-There are currently no results about small SDP lifts of the matching polytope, equivariant or otherwise.
-For the cut polytope (an NP-hard problem), Fawzi, Saunderson, and Parrilo \cite{fawzi2014equivariant} and Lee, Raghavendra, Steurer, and Tan \cite{lee2014power} proved that CUT has no small equivariant lift.
-Lee, Raghavendra, and Steurer \cite{lee2014lower} proved that CUT has no small PSD lift at all.
+There are currently no results about small SDP lifts of $\MATCH_n$, invariant or otherwise.
+More is known about the {\em cut polytope} $\CUT_n$, the convex hull of characteristic vectors of cuts in $K_{n}$.
+Since the max cut problem is NP-complete, we don't expect a small lift of $\CUT_n$, and that is what has recently been shown.
+Fawzi, Saunderson, and Parrilo \cite{fawzi2014equivariant} and Lee, Raghavendra, Steurer, and Tan \cite{lee2014power}, using slightly different group actions, proved that $\CUT_n$ has no small invariant SDP lift.
+Lee, Raghavendra, and Steurer \cite{lee2014lower} proved that $\CUT_n$ has no small SDP lift.
 
-
-
-
-SDP Lifts/SOS degree
-
-psd rank -- no technique 
-systematic lifts:
-Lasserre lifts/theta lifts: 
-papers of Lasserre and Gouveia-Parrilo-Thomas
-http://arxiv.org/abs/1407.4095
-
-
-B-- symmetry reduction in SDP
-sdp in general: perhaps our SIAM book?
-symmetry in sdp:  
-Gatermann-Parrilo
-Vallentin et. al "Invariant semidefinite programs"
-
+An important tool for analyzing an invariant semidefinite program is block diagonalization.
+If an SDP is invariant under a group action, it can be brought into block diagonal form by decomposing the underlying space into $G$-modules; see Vallentin \cite{vallentin2009symmetry} for a tutorial.
+Applied to SDP lifts, this gives a method for determining the size of the smallest invariant SDP lift for a given polytope.
+In this paper, we give an explicit decomposition for $S_{2n}$ acting on the matching polytope.
+Such a decomposition is a first step in finding the smallest invariant SDP lift for the matching polytope.
 
 Let $B_n \subseteq S_{2n}$ be the {\em hyperoctahedral group}; that is, the stabilizer of $\sigma = (12)(34)\ldots (2n-1,2n)$ in $S_{2n}$. Barbasch and Vogan \cite{bv} showed that the induced representation $\Ind_{B_n}^{S_{2n}}(1)$ decomposes into a sum of Specht modules $\oplus_\lambda S^\lambda$, one for each $\lambda \vdash 2n$ such that each $\lambda_i$ is even.
 We define two subgroups $C_{m,n}$ and $D_{m,n}$ of $S_{mn}$, each of which is a natural generalization of $B_n$. 
