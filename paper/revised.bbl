@@ -1,0 +1,26 @@
+\begin{thebibliography}{1}
+
+\bibitem{bv}
+Dan Barbasch and David Vogan.
+\newblock Weyl group representations and nilpotent orbits.
+\newblock In {\em Representation theory of reductive groups ({P}ark {C}ity,
+  {U}tah, 1982)}, volume~40 of {\em Progr. Math.}, pages 21--33. Birkh\"auser
+  Boston, Boston, MA, 1983.
+
+\bibitem{fawzi2014equivariant}
+Hamza Fawzi, James Saunderson, and Pablo~A Parrilo.
+\newblock Equivariant semidefinite lifts of regular polygons.
+\newblock {\em arXiv preprint arXiv:1409.4379}, 2014.
+
+\bibitem{lee2014lower}
+James~R Lee, Prasad Raghavendra, and David Steurer.
+\newblock Lower bounds on the size of semidefinite programming relaxations.
+\newblock {\em arXiv preprint arXiv:1411.6317}, 2014.
+
+\bibitem{lee2014power}
+James~R Lee, Prasad Raghavendra, David Steurer, and Ning Tan.
+\newblock On the power of symmetric lp and sdp relaxations.
+\newblock In {\em IEEE 29th Conference on Computational Complexity, CCC 2014,
+  Vancouver, BC, Canada}, pages 13--21, 2014.
+
+\end{thebibliography}
