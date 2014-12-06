@@ -1,15 +1,12 @@
 1.1
 first paragraph, add references about lifts to the first paragraph,
 e.g. yannakakis for LP and gouveia-parrillo-thomas for sdp lifts.
+Mention theta body.
 second paragraph, at the beginning mention that we are interested in
 whether LP or SDP lifts are as strong as polytime computations. (For
 NP problems we don't expect small lifts. - move this from third
 paragraph). Until Rothvoss paper, everything in P that we knew of had
 a small lift. drum up rothvoss result.
-third pp-we can ask all the same questions for sdp. sdp lifts of match
-is the major open ptoblem at this pt. work in this paper is 1st step.
-
-1.2 add a paragraph of how pp1 applies to matching sdp lifts, define bn etc.
 
 ****
 read by myself to see if it's convincing. after edits send to rekha
