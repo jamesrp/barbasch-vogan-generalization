@@ -39,15 +39,14 @@ University of Washington, Seattle, WA 98195}
 
 \begin{document}
 \begin{abstract}
-We give an explicit decomposition of $\Ind(1)_{B_n}^{S_{2n}}$, following Barbasch and Vogan \cite{bv}.
-We define two natural generalizations of $B_n$, and extend the proof in \cite{bv} to recursively compute these decompositions.
+We give a concrete decomposition of the coset representation of the hyperoctahedral group, following Barbasch and Vogan \cite{bv}.
+We define two natural generalizations of the hyperoctahedral group, and extend the proof in \cite{bv} to recursively compute these decompositions.
 Although the decompositions do not appear to follow a simple pattern, we prove enough of their structure to show that they are almost never multiplicity-free.
-The algebraic results are a first step in deciding whether the matching polytope has a small equivariant semidefinite lift.
+These algebraic results are a first step in deciding whether the matching polytope has a small equivariant semidefinite lift.
 \end{abstract}
 \maketitle
 
 \section{Introduction} \label{BV:Introduction}
-\subsection{Lifts of polytopes}
 A lift of a polytope $P \subseteq \RR^n$ is an object $Q \subseteq \RR^m$ together with a linear map $L: \RR^m \to \RR^n$ such that $L(Q) = P$.
 Usually we choose a $Q$ over which we can efficiently optimize linear functions.
 This then gives a procedure for optimizing linear functions over $P$, which bounds the complexity of optimizing over $P$.
@@ -68,7 +67,6 @@ Since the max cut problem is NP-complete, we don't expect a small lift of $\CUT_
 Fawzi, Saunderson, and Parrilo \cite{fawzi2014equivariant} and Lee, Raghavendra, Steurer, and Tan \cite{lee2014power}, using slightly different group actions, proved that $\CUT_n$ has no small invariant SDP lift.
 Lee, Raghavendra, and Steurer \cite{lee2014lower} proved that $\CUT_n$ has no small SDP lift.
 
-\subsection{Decomposing $\MATCH_n$ into irreducibles}
 An important tool for analyzing an invariant semidefinite program is block diagonalization.
 If an SDP is invariant under a group action, it can be brought into block diagonal form by decomposing the underlying space into $G$-modules; see Vallentin \cite{vallentin2009symmetry} for a tutorial.
 Applied to SDP lifts, this gives a method for determining the size of the smallest invariant SDP lift for a given polytope.
