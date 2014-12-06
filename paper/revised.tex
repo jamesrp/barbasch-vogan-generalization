@@ -42,13 +42,11 @@ University of Washington, Seattle, WA 98195}
 We give a concrete decomposition of the coset representation of the hyperoctahedral group, following Barbasch and Vogan \cite{bv}.
 We define two natural generalizations of the hyperoctahedral group, and extend the proof in \cite{bv} to recursively compute these decompositions.
 Although the decompositions do not appear to follow a simple pattern, we prove enough of their structure to show that they are almost never multiplicity-free.
-These algebraic results are a first step in deciding whether the matching polytope has a small equivariant semidefinite lift.
+These algebraic results are a first step in deciding whether the matching polytope has a small invariant semidefinite lift.
 \end{abstract}
 \maketitle
 
 \section{Introduction} \label{BV:Introduction}
-
-// 1.1
 
 A lift of a polytope $P \subseteq \RR^n$ is an object $Q \subseteq \RR^m$ together with a linear map $L: \RR^m \to \RR^n$ such that $L(Q) = P$.
 Usually we choose a $Q$ over which we can efficiently optimize linear functions.
@@ -60,7 +58,7 @@ For a given polytope, we are interested in whether a small SDP or LP lift exists
 For background on LP lifts, see Yannakakis \cite{yannakakis1988expressing}.
 For background on SDP lifts, see Gouveia, Parrilo, and Thomas \cite{gpt}.
 
-One question is whether LP or SDP lifts capture all the computational power of polynomial-time computation.
+We can ask whether LP or SDP lifts capture all the computational power of polynomial-time computation.
 That is, given that a combinatorial optimization problem is in P, does the associated family of polytopes have small lifts?
 (For NP-hard problems we don't expect small lifts unless P = NP.)
 A central example is the {\em matching polytope} $\MATCH_n$, given by the convex hull of characteristic vectors of perfect matchings in the complete graph $K_{2n}$.
