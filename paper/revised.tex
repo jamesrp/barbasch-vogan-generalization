@@ -57,6 +57,8 @@ Two important examples are LP (linear) lifts, in which $Q$ is again a polytope, 
 We often have that $P$ is invariant under a group $G$.
 In this case, we say the lift is {\em invariant} if $G$ preserves $Q$ and commutes with $L$.
 For a given polytope, we are interested in whether a small SDP or LP lift exists, and if so, whether it can be made invariant.
+For background on LP lifts, see \cite{yannakakis1988expressing}.
+In the case of SDP there are automatic methods for producing SDP lifts based on sums of squares, see \cite{gpt}.
 
 One question is whether LP or SDP lifts capture all the computational power of polynomial-time computation.
 That is, given that a combinatorial optimization problem is in P, does the associated family of polytopes have small lifts?
@@ -87,7 +89,7 @@ Such a decomposition is a first step in finding the smallest invariant SDP lift 
 Let $B_n \subseteq S_{2n}$ be the {\em hyperoctahedral group}; that is, the stabilizer of $\sigma = (12)(34)\ldots (2n-1,2n)$ in $S_{2n}$.
 Barbasch and Vogan \cite{bv} showed that the induced representation $\Ind_{B_n}^{S_{2n}}(1)$ decomposes into a sum of Specht modules $\oplus_\lambda S^\lambda$, one for each $\lambda \vdash 2n$ such that each $\lambda_i$ is even.
 The $S_{2n}$-module $\Ind_{B_n}^{S_{2n}}(1)$ is naturally isomorphic to the vector space of perfect matchings on $K_{2n}$.
-Decomposing this vector space into irreducible representations corresponds to a block diagonalization of the semidefinite program underlying the theta body for these matchings.
+Decomposing this vector space into irreducible representations corresponds to a block diagonalization of the semidefinite program underlying the sum of squares lift for these matchings.
 
 We define two subgroups $C_{m,n}$ and $D_{m,n}$ of $S_{mn}$, each of which is a natural generalization of $B_n$.
 Let $C_{m,n} = S_n \wreath S_m$ and $D_{m,n} = S_n \wreath C_m$.
