@@ -58,11 +58,15 @@ We often have that $P$ is invariant under a group $G$.
 In this case, we say the lift is {\em invariant} if $G$ preserves $Q$ and commutes with $L$.
 For a given polytope, we are interested in whether a small SDP or LP lift exists, and if so, whether it can be made invariant.
 
+One question is whether LP or SDP lifts capture all the computational power of polynomial-time computation.
+That is, given that a combinatorial optimization problem is in P, does the associated family of polytopes have small lifts?
+(For NP-hard problems we don't expect small lifts unless P = NP.)
 A central example is the {\em matching polytope} $\MATCH_n$, given by the convex hull of characteristic vectors of perfect matchings in the complete graph $K_{2n}$.
 Since the maximum matching problem is in P, it is reasonable that there be a small lift of $\MATCH_n$.
 However, Yannakakis \cite{yannakakis1988expressing} proved that $\MATCH_n$ has no small invariant LP lift.
 Kaibel, Pashkovich, and Theis \cite{kaibel2010symmetry} found examples of slices of $\MATCH_n$ for which there is a small lift but no small invariant lift.
 Rothvoss \cite{rothvoss2013matching} showed that $\MATCH_n$ has no small LP lift.
+This was a groundbreaking result as it was the first example of a problem in P which provably has no small lift.
 
 We can ask all the above problems about SDP lifts.
 The {\em cut polytope} $\CUT_n$ is the convex hull of characteristic vectors of cuts in $K_{n}$.
